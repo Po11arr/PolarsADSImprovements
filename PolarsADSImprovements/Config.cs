@@ -174,10 +174,13 @@ public class Config : INotifyPropertyChanged
         defaultZoom = Clamp(defaultZoom, 1f, 6f, 2f);
         WeaponZooms ??= new List<WeaponZoom>();
 
-        // 1.1.0 saved every weapon's preset or default when the settings dialog opened.
-        // Drop those copies so the weapons follow DefaultZoom again.
+        // 1.1.0 saved every weapon's preset or default when the settings dialog opened, usually at
+        // the shipped 2x even if Default zoom was changed afterwards. Drop those copies so the
+        // weapons follow Default zoom again. A value deliberately set to exactly one of these in
+        // 1.1.0 is dropped too.
         if (ConfigVersion == null)
             WeaponZooms.RemoveAll(e => Math.Abs(e.Magnification - defaultZoom) < 0.001f
+                                       || Math.Abs(e.Magnification - 2f) < 0.001f
                                        || Math.Abs(e.Magnification - 3f) < 0.001f
                                        || Math.Abs(e.Magnification - 1.75f) < 0.001f
                                        || Math.Abs(e.Magnification - 1.5f) < 0.001f);

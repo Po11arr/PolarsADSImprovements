@@ -40,6 +40,8 @@ Saved to `%AppData%\SpaceEngineers\Storage\PolarsADSImprovements.cfg`, created o
 ## Known issues
 
 - Modded guns join the per-weapon list once a world that loads them is open.
+- Setting a weapon to the same value as Default zoom makes it follow Default zoom from then on.
+- Upgrading from 1.1.0: per-weapon values of exactly 1.5x, 1.75x, 2x or 3x are reset to follow Default zoom, because 1.1.0 stored those for every weapon by itself.
 - Vanilla starting values are matched on model numbers in the weapon name (MR-8P, RO-1, S-10, S-20).
 
 ## How it works
