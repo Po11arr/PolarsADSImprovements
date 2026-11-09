@@ -22,6 +22,9 @@ public static class ConfigStorage
     {
         try
         {
+            // Every file written now has the current schema. A missing version means a 1.1.0 file,
+            // which Config.Validate migrates; a fresh config must never look like one.
+            config.ConfigVersion = Config.CurrentConfigVersion;
             var path = StoragePath(ConfigFileName);
             Directory.CreateDirectory(Path.GetDirectoryName(path));
             using (var text = File.CreateText(path))
