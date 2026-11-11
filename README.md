@@ -4,6 +4,10 @@ Aim-down-sights tuning for Space Engineers hand weapons, CoD / Battlefield style
 
 **Multiplayer:** no server install. Only your own view and mouse speed change. The server receives your resulting aim direction, as in vanilla.
 
+![Aiming down sights with each vanilla hand weapon at its own zoom](docs/images/00-all-weapons.jpg)
+
+Top row: pistols. Middle row: rifles, iron and holo sights. Bottom row: rifle holo sight and the two rocket launchers.
+
 ## What it does
 
 - **FOV-based sensitivity.** Vanilla slows ironsight look speed by a flat 0.6x whatever your FOV. This plugin uses monitor distance matching instead: `atan(c * tan(zoomFov/2)) / atan(c * tan(hipFov/2))`, with `c` = 1.33 by default (the CoD / Battlefield default). It follows the live FOV, including during the zoom transition.
@@ -15,6 +19,8 @@ Aim-down-sights tuning for Space Engineers hand weapons, CoD / Battlefield style
 None of its own. Aim with your usual key. Hold or toggle aim is the vanilla option in Options > Game.
 
 ## Settings
+
+<p><img src="docs/images/settings-1.jpg" width="45%" alt="Settings: sensitivity, smooth zoom and per-weapon zoom"> <img src="docs/images/settings-2.jpg" width="45%" alt="Settings: one zoom row per weapon"></p>
 
 Pulsar plugin list > Polar's ADS Improvements > Settings.
 
